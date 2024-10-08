@@ -2,3 +2,4 @@
 
 IMDM327 Fall 2024 
 Course Material
+Instructor. Myungin Lee
