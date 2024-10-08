@@ -48,12 +48,8 @@ public class SoundBoids : MonoBehaviour
 
     void Update()
     {
-        //for (int i = 0; i < Boids2.numberOfSphere; i++)
-        //{
-        //    frequency = Boids2.bp[i].acceleration.sqrMagnitude;
-        //    pan = (Camera.CameraPosition - Boids2.body[i].transform.position).x;
-        //}
-        frequency = (Camera.CameraPosition - gameObject.transform.position).sqrMagnitude / 100f;
+        // Frequency, which is the thing you can define
+        frequency = (Camera.CameraPosition - gameObject.transform.position).sqrMagnitude / 1000f;
         // Stereo panning of refering to the cam pos and boids body
         float theta = CalculatePan(Camera.CameraPosition, gameObject.transform.position);
         // ex) Sin panning http://gdsp.hf.ntnu.no/lessons/1/5/
