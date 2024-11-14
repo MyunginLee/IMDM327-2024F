@@ -48,11 +48,27 @@ Shader "Unlit/Raymarch"
                 return o;
             }
 
+            //signed distance function 
             float GetDist(float3 p) 
             {
                 //the scene, here is the sphere
-                float d = length(p) - 0.5; //length(p) is distance from origin to p
-                return d;
+                //float d = length(p) - 0.5; //length(p) is distance from origin to p
+                //return d;
+                
+                //torus
+                //float2 t = float2(0.5, 0.1);
+                //float2 q = float2(length(p.xz) - t.x, p.y);
+                //return length(q)-t.y;
+
+                //hollow sphere
+                float r = 0.5; //radius of outer sphere
+                float h = 0.2; //inner sphere
+                float t = 0.05; //thickness
+
+                float w = sqrt(r*r - h*h);
+
+                float2 q = float2(length(p.xz), p.y);
+                return ((h*q.x < w*q.y) ? length(q-float2(w,h)) : abs(length(q)-r)) - t;
             }
             
             float Raymarch(float3 ro, float3 rd) 
@@ -95,8 +111,14 @@ Shader "Unlit/Raymarch"
                 if (d < MAX_DIST) {
                     float3 p = ro + rd * d;
                     float3 n = GetNormal(p);
-                    //color
-                    col.rgb = n;
+
+                    //normal color
+                    // col.rgb = n;
+
+                    //add shading with a light source
+                    float3 lightDir = normalize(float3(1, 1, -1));
+                    float diff = max(dot(n, lightDir), 0.0);
+                    col.rgb = diff * float3(1.0, 0.5, 0.2);
                 } 
                 else
                     discard;
