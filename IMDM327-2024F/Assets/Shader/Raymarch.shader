@@ -83,17 +83,19 @@ Shader "Unlit/Raymarch"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 uv = i.uv - 0.1;
-                float3 ro = i.ro;//float3(0,0,-3);
+
+                //ray origin
+                float3 ro = i.ro;
+                //ray direction
                 float3 rd = normalize(i.hitPos - ro);
 
                 float d = Raymarch(ro, rd);
-                // fixed4 tex = tex2D(_MainTex, i.uv);
                 fixed4 col = 0;
-                float m = dot(uv, uv);
 
                 if (d < MAX_DIST) {
                     float3 p = ro + rd * d;
                     float3 n = GetNormal(p);
+                    //color
                     col.rgb = n;
                 } 
                 else
