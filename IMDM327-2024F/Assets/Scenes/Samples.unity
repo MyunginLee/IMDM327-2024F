@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 407714120}
   - component: {fileID: 407714124}
   m_Layer: 0
-  m_Name: MyPlane
+  m_Name: 10_Mandelbrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 00e9a3c9624834fb79a52736a7e5b5cf, type: 2}
+  - {fileID: 2100000, guid: 758df3a5d7ff6454b83bdce60c711ea1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e615332be5574b78a5914ca443d1b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 00e9a3c9624834fb79a52736a7e5b5cf, type: 2}
+  mat: {fileID: 2100000, guid: 758df3a5d7ff6454b83bdce60c711ea1, type: 2}
   offset: {x: 0, y: 0}
   zoom: 1
 --- !u!1 &611712898
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 1166056380}
   - component: {fileID: 1166056379}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: 09_BasicShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,7 +874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6162923a709494cb3a729d609f2aeac7, type: 2}
+  - {fileID: 2100000, guid: 48b40fd3d9090497cb0ea903a68d841b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
